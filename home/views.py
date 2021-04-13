@@ -7,17 +7,17 @@ from comment.forms import CommentForm
   
 
 def home(request):
-    return render(request, 'home/index.html')  
+    return render(request, 'home/index.html',  {'commentForm': CommentForm()})  
 
 
 def addComment(request):
-    if request.POST:
+    if request.method == "POST":
         form_comment = CommentForm(data=request.POST)
         if form_comment.is_valid():
             comment = form_comment.save(commit=False)
             if request.user.is_authenticated:
                 comment.user = request.user
-                comment.save()
+            comment.save() 
         else:
             raise forms.ValidationError("wrong format")
     return render(request, 'home/index.html', {'commentForm': CommentForm()})

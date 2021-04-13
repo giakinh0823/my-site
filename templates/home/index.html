@@ -501,30 +501,33 @@
                         </div>
                     </div>
                     <div class="col-md-8" style="padding: 0 60px;">
-                        <form id="contact-form" class="contact-form mt-6">
+                        <form id="contact-form" action="{% url 'home:comment' %}" class="contact-form mt-6" method="POST">
+                            {% csrf_token %}
                             <div class="row">
                                 <div class="column col-md-6 itemInput">
-                                    <div class="form-group"><input type="text" class="form-control" name="name"
-                                            id="InputName" placeholder="Tên của bạn" value=""></div>
+                                    <div class="form-group"><input type="text" class="form-control" required maxlength="2000" name="name"
+                                            id="id_name" placeholder="Tên của bạn" value=""></div>
                                 </div>
                                 <div class="column col-md-6 itemInput">
-                                    <div class="form-group"><input type="email" class="form-control" id="InputEmail"
+                                    <div class="form-group"><input type="email" class="form-control" required maxlength="256" id="id_email"
                                             name="email" placeholder="Email của bạn" value=""></div>
                                 </div>
                                 <div class="column col-md-12 itemInput ">
-                                    <div class="form-group"><input type="text" class="form-control" id="InputSubject"
-                                            name="subject" placeholder="Tiêu đề" value=""></div>
+                                    <div class="form-group"><input type="text" maxlength="256" required class="form-control" id="id_title"
+                                            name="title" placeholder="Tiêu đề" value=""></div>
                                 </div>
                                 <div class="column col-md-12 itemInput">
-                                    <div class="form-group"><textarea name="message" id="InputMessage"
+                                    <div class="form-group"><textarea name="content" id="id_content"
                                             class="form-control" rows="5" placeholder="Nội dung"
-                                            style="height: 100%;"></textarea></div>
+                                            style="height: 100%;" required></textarea></div>
                                 </div>
                             </div><button type="submit" name="submit" id="submit" value="Submit"
                                 class="btn btn-default">Gửi tin nhắn</button>
                         </form>
                     </div>
                 </div>
+                <!-- {{ commentForm }} -->
+
             </div>
             <div class="spacer" data-height="96"></div>
             <div style="padding:30px"></div>
