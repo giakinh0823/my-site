@@ -24,7 +24,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth.views import LogoutView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('iamgiakinh/', admin.site.urls),
     
     #home
     path('', include('home.urls')),
