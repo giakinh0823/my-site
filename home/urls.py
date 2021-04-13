@@ -10,7 +10,7 @@ app_name='home'
 
 urlpatterns = [
     path('', views.home, name='index'),
-    path('/comment', views.addComment, name='comment'),
+    path('comment/', views.addComment, name='comment'),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

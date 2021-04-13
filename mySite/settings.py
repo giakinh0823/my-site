@@ -139,21 +139,21 @@ DATABASES = {
 }
 
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'sql_server.pyodbc',
-#         'NAME': 'FPTScholar',
-#         'USER': 'giakinh0823',
-#         'PASSWORD': 'Danhancach0823',
-#         'HOST': 'tcp:giakinh0823.database.windows.net',
-#         'PORT': '1433',
-#         'OPTIONS': {
-#             'unicode_results':True,
-#             'extra_params': 'ClientCharset=utf8',
-#             'driver': 'ODBC Driver 17 for SQL Server',
-#         },
-#     },
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'giakinh',
+        'USER': 'giakinh0823',
+        'PASSWORD': 'Danhancach0823',
+        'HOST': 'tcp:giakinh0823.database.windows.net',
+        'PORT': '1433',
+        'OPTIONS': {
+            'unicode_results':True,
+            'extra_params': 'ClientCharset=utf8',
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
+    },
+}
 
 DATABASE_CONNECTION_POOLING = False
 
@@ -196,26 +196,26 @@ USE_TZ = True
 
 
 
-# AZURE_ACCOUNT_NAME = 'sqlvan3doctgbfyraq'
-# AZURE_ACCOUNT_KEY = 'prKEJB6mWOBX9EZ9M7I0nND3/1RZOpGoR6n4zAGtY+zGgYYKgk2VhMkyoXPMyHCtuKQgp7SlxQbi0IG9SPPYcA=='
+AZURE_ACCOUNT_NAME = 'sqlvan3doctgbfyraq'
+AZURE_ACCOUNT_KEY = 'prKEJB6mWOBX9EZ9M7I0nND3/1RZOpGoR6n4zAGtY+zGgYYKgk2VhMkyoXPMyHCtuKQgp7SlxQbi0IG9SPPYcA=='
 
 
-# STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
+STATICFILES_STORAGE = 'storages.backends.azure_storage.AzureStorage'
 
-# # DEFAULT_FILE_STORAGE = 'mysite.custom_azure.AzureMediaStorage'
-# DEFAULT_FILE_STORAGE = 'Scholar.custom_azure.AzureMediaStorage'
+# DEFAULT_FILE_STORAGE = 'mysite.custom_azure.AzureMediaStorage'
+DEFAULT_FILE_STORAGE = 'mySite.custom_azure.AzureMediaStorage'
 
-# STATIC_LOCATION = "static"
-# MEDIA_LOCATION = "http://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/media"
+STATIC_LOCATION = "static"
+MEDIA_LOCATION = "http://{AZURE_ACCOUNT_NAME}.blob.core.windows.net/media"
 
-# MEDIA_ROOT='http://{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+MEDIA_ROOT='http://{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
 
-# AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-# # AZURE_LOCATION=f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
-# AZURE_LOCATION = 'vulnerability-assessment'
-# AZURE_CONTAINER = 'vulnerability-assessment'
-# STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
-# MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
+AZURE_CUSTOM_DOMAIN = f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+# AZURE_LOCATION=f'{AZURE_ACCOUNT_NAME}.blob.core.windows.net'
+AZURE_LOCATION = 'giakinh0823'
+AZURE_CONTAINER = 'giakinh0823'
+STATIC_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{STATIC_LOCATION}/'
+MEDIA_URL = f'https://{AZURE_CUSTOM_DOMAIN}/{MEDIA_LOCATION}/'
 
 
 STATIC_URL = '/static/'
