@@ -141,7 +141,7 @@ body {
 .icon-scroll {
 	position: absolute;
 	bottom: 5%;
-	left: 50%;
+	left: 52%;
     width: 16px;
 	height: 10px;
 	transform: translateX(-50%) scale(2);
@@ -343,7 +343,6 @@ body {
 
 
 
-
 @media screen and (max-width: 1060px) {
     .navbarleft{
         display: none;
@@ -363,4 +362,3 @@ body {
         text-align: center !important;
     }
 }
-
