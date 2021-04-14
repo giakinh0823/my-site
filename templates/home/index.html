@@ -14,7 +14,7 @@
             <img src="{% static 'img/avatar-2.svg' %}"
                     alt="" style="width:100%; margin-bottom:20px">
             {% if user.is_authenticated %} 
-            <div style="display:flex">
+            <div style="display:flex; justify-content:center">
                 <span style="margin:0; padding:0; font-size: 16px; text-transform: uppercase;">{{name}}</span>
                 <a href="{% url 'register:editname' %}" style="text-decoration:none;color:#ffd15c" target="_blank"><span class="material-icons" style="font-size:16px; margin:0;padding:0;margin-left:4px">edit</span></a>
             </div>
