@@ -29,8 +29,12 @@ urlpatterns = [
     #home
     path('', include('home.urls')),
     
-    #register
-    # path('', include('register.urls')),
+    #google
+    path('accounts/', include('allauth.urls')),
+    path('logout', LogoutView.as_view()),
+    
+    # register
+    path('', include('register.urls')),
     
     #change password
     path('change-password/',auth_views.PasswordChangeView.as_view(template_name='register/change-password.html',
