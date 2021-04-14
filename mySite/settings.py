@@ -139,21 +139,21 @@ DATABASES = {
 }
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'giakinh',
-        'USER': 'giakinh0823',
-        'PASSWORD': 'Danhancach0823',
-        'HOST': 'tcp:giakinh0823.database.windows.net',
-        'PORT': '1433',
-        'OPTIONS': {
-            'unicode_results':True,
-            'extra_params': 'ClientCharset=utf8',
-            'driver': 'ODBC Driver 17 for SQL Server',
-        },
-    },
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'sql_server.pyodbc',
+#         'NAME': 'giakinh',
+#         'USER': 'giakinh0823',
+#         'PASSWORD': 'Danhancach0823',
+#         'HOST': 'tcp:giakinh0823.database.windows.net',
+#         'PORT': '1433',
+#         'OPTIONS': {
+#             'unicode_results':True,
+#             'extra_params': 'ClientCharset=utf8',
+#             'driver': 'ODBC Driver 17 for SQL Server',
+#         },
+#     },
+# }
 
 DATABASE_CONNECTION_POOLING = False
 
