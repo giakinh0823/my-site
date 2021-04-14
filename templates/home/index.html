@@ -1,12 +1,12 @@
 {% extends 'base/base.html' %}
 {% load static %}
-
-
 {% block body %}
-<input type="checkbox" id="toggle">
+<input type="checkbox" id="toggle" class="checkbox">
 <label for="toggle" id="menu-nav">
     <span class="material-icons icon-menu">menu</span>
 </label>
+
+
 <nav style="background-color:#24292e; position: fixed; top:0px; left:0px; width: 20%; height: 100vh;"
     class="navbarleft">
     <div style="width: 60%; margin: 60px auto;text-align: center;margin-bottom:40px">
@@ -607,5 +607,6 @@
         <div style="padding:30px"></div>
     </section>
 </div>
+
 
 {% endblock body %}
