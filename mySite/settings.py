@@ -131,29 +131,29 @@ WSGI_APPLICATION = 'mySite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
-
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'sql_server.pyodbc',
-#         'NAME': 'giakinh',
-#         'USER': 'giakinh0823',
-#         'PASSWORD': 'Danhancach0823',
-#         'HOST': 'tcp:giakinh0823.database.windows.net',
-#         'PORT': '1433',
-#         'OPTIONS': {
-#             'unicode_results':True,
-#             'extra_params': 'ClientCharset=utf8',
-#             'driver': 'ODBC Driver 17 for SQL Server',
-#         },
-#     },
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
 # }
+
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'sql_server.pyodbc',
+        'NAME': 'giakinh',
+        'USER': 'giakinh0823',
+        'PASSWORD': 'Danhancach0823',
+        'HOST': 'tcp:giakinh0823.database.windows.net',
+        'PORT': '1433',
+        'OPTIONS': {
+            'unicode_results':True,
+            'extra_params': 'ClientCharset=utf8',
+            'driver': 'ODBC Driver 17 for SQL Server',
+        },
+    },
+}
 
 DATABASE_CONNECTION_POOLING = False
 
