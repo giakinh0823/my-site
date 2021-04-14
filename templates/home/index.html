@@ -54,7 +54,7 @@
         display: none;
     }
 
-    
+
 
     @media screen and (min-width: 1061px) {
         #menu-nav {
@@ -64,29 +64,29 @@
 
     @media screen and (max-width: 1060px) {
 
-        #toggle:checked~ #menu-nav{
+        #toggle:checked~#menu-nav {
             left: 270px;
             transition: all 0.8s ease-in-out;
         }
-    
+
         #toggle:checked~.navbarleft {
             display: block !important;
             width: 270px !important;
             z-index: 10;
             animation: navmenuopen 0.8s ease-in-out;
         }
-    
-    
+
+
         #toggle:not(:checked)~.navbarleft {
             display: none !important;
         }
-    
-    
+
+
         @keyframes navmenuopen {
             0% {
-               transform: translateX(-100%)
+                transform: translateX(-100%)
             }
-    
+
             100% {
                 transform: translateX(0);
             }
@@ -238,23 +238,37 @@
                         <img src="{% static 'icon/whatshot.svg' %}" alt="">
                     </div>
                     <div>
-                        <span>6</span>
+                        <span  class="span">6</span>
                         <div></div>
-                        <span>Hoàn thành</span>
+                        <span  class="span">Hoàn thành</span>
                     </div>
                 </li>
                 <li class="about-item">
                     <div>
-                        <img src="{% static 'icon/people.svg' %}" alt="">
+                        <img class="about-item-img" src="{% static 'icon/people.svg' %}" alt="">
                     </div>
                     <div>
-                        <span>3.595</span>
+                        <span  class="span">3.595</span>
                         <div></div>
-                        <span>Người theo dõi</span>
+                        <span  class="span">Người theo dõi</span>
                     </div>
                 </li>
             </ul>
+            <style>
+                @media screen and (max-width: 560px) {
+                    .about-item{
+                        display:flex;
+                        flex-direction:column!important;
+                    }
+                    .span {
+                        font-size: 16px !important;
+                    }
+
+                }
+            </style>
         </div>
+
+
 
     </section>
     <section class="w-100 text-center display-1" id="item3"
