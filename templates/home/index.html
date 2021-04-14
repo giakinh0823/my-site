@@ -163,17 +163,17 @@
             <h2 style="font-size:32px">Giới thiệu</h2>
         </div>
         <div class="row" style="margin-top: 30px;">
-            <div class='col-md-3'>
+            <div class='col-lg-3'>
                 <div style="margin: 50px;">
                     <img style="width:150px;border-radius:100%; "
                         src="https://scontent.fhan3-3.fna.fbcdn.net/v/t1.6435-9/159564777_1420131984999037_4140074952289360469_n.jpg?_nc_cat=106&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=ORrhOcOekqkAX8GIxxD&_nc_ht=scontent.fhan3-3.fna&oh=1430488e85112625b6819c83d3b60223&oe=6099ED66"
                         alt="">
                 </div>
             </div>
-            <div class="col-md-9 triangle-left-md triangle-top-sm content-about" style="padding: 20px;">
+            <div class="col-lg-9 triangle-left-md triangle-top-sm content-about" style="padding: 20px;">
                 <div class=" bg-white shadow-dark" style="border-radius: 20px;">
                     <div class="row" style="font-size:16px;     font-family: 'Varela Round',sans-serif;">
-                        <div class="col-md-6 "
+                        <div class="col-lg-6 "
                             style="padding: 30px 38px;font-size: 16px;font-weight:400; line-height: 1.7; -webkit-font-smoothing: antialiased;">
                             <p style="padding-left:10px">Tôi là Gia Kính. Hiện đang là sinh viên tại đại học FPT Hà Nội.
                                 Tôi là một developer,
@@ -182,7 +182,7 @@
                                     style="margin: 5px 0">Tìm hiểu thêm</a></div>
                             <div class="spacer d-md-none d-lg-none" data-height="30"></div>
                         </div>
-                        <div class="col-md-6"
+                        <div class="col-lg-6"
                             style="padding: 40px;margin: auto 0;font-size: 16px;font-weight:400; line-height: 1.7; -webkit-font-smoothing: antialiased;">
                             <div class="progress-wrapper">
                                 <div class="skill-item">
@@ -229,6 +229,18 @@
                     top: 30%;
                     left: 4px;
                 }
+
+                @media screen and (max-width: 1060px) {
+                    .content-about::after {
+                        content: "";
+                        border-left: 16px solid transparent;
+                        border-right: 16px solid transparent;
+                        border-bottom: 16px solid rgb(255, 255, 255);
+                        position: absolute;
+                        top: -10px;
+                        left: 48%;
+                    }
+                }    
             </style>
         </div>
         <div style="margin-top:90px;" class="about-end">
