@@ -1,7 +1,10 @@
 from django.shortcuts import render
+from django.http import HttpResponse, HttpResponseRedirect
 from comment import forms
 from comment.forms import CommentForm
 from django.contrib.auth.models import User
+from django.core.mail import send_mail, BadHeaderError
+
 
 
 # Create your views here.
@@ -23,6 +26,19 @@ def addComment(request):
             if request.user.is_authenticated:
                 comment.user = request.user
             comment.save() 
+            subject = form_comment.cleaned_data['title']
+            body = {
+            'Username': 'User:' + str(request.user),   
+			'Fullname': 'Name:' + form_comment.cleaned_data['name'], 
+			'Email': 'From: ' + form_comment.cleaned_data['email'], 
+			'Message': 'Message: ' + form_comment.cleaned_data['content'], 
+			}
+            message = "\n".join(body.values())
+            try:
+                send_mail(subject, message, 'giakinhfullstack@gmail.com', ['giakinh2000@gmail.com']) 
+            except BadHeaderError:
+                return HttpResponse('Invalid header found.')
+			
         else:
             raise forms.ValidationError("wrong format")
     return render(request, 'home/index.html', {'commentForm': CommentForm()})
