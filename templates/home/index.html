@@ -9,11 +9,18 @@
 
 <nav style="background-color:#24292e; position: fixed; top:0px; left:0px; width: 20%; height: 100vh;"
     class="navbarleft">
-    <div style="width: 60%; margin: 60px auto;text-align: center;margin-bottom:20px">
+    <div style="width: 40%; margin: 40px auto;text-align: center;margin-bottom:-30px">
         <a href="#" style="text-decoration:none; color: #ffd15c;">
-            <!-- <img src="https://i1.wp.com/hanoi.fpt.edu.vn/wp-content/uploads/2018/01/logo.png?fit=237%2C64&amp;ssl=1"
-                    alt="" style="width:100%"> -->
-            <span style="margin:0; padding:0; font-size: 18px">HA GIA KINH</span>
+            <img src="{% static 'img/avatar-2.svg' %}"
+                    alt="" style="width:100%; margin-bottom:20px">
+            {% if user.is_authenticated %} 
+            <div style="display:flex">
+                <span style="margin:0; padding:0; font-size: 16px; text-transform: uppercase;">{{name}}</span>
+                <a href="{% url 'register:editname' %}" style="text-decoration:none;color:#ffd15c" target="_blank"><span class="material-icons" style="font-size:16px; margin:0;padding:0;margin-left:4px">edit</span></a>
+            </div>
+            {% else %}  
+            <span style="margin:0; padding:0; font-size: 16px; text-transform: uppercase;">HA GIA KINH</span>
+            {% endif %}
         </a>
     </div>
     <div id="list-example" class="nav-group">
@@ -29,8 +36,13 @@
                     Đánh giá</a></li>
             <li class="nav-item"><a class="nav-link" href="#item5"><span
                         class="material-icons nav-icon">question_answer</span> Liên hệ</a></li>
+            {% if user.is_authenticated %}
+            <li class="nav-item"><a class="nav-link" href="{% url 'register:logout' %}"><span
+                class="material-icons nav-icon">people</span>Logout</a></li>
+            {% else %}
             <li class="nav-item"><a class="nav-link" href="{% url 'register:login' %}"><span
                         class="material-icons nav-icon">people</span>Login</a></li>
+            {% endif %}
         </ul>
     </div>
 </nav>

@@ -1,13 +1,18 @@
 from django.shortcuts import render
 from comment import forms
 from comment.forms import CommentForm
+from django.contrib.auth.models import User
+
 
 # Create your views here.
 
   
 
 def home(request):
-    return render(request, 'home/index.html',  {'commentForm': CommentForm()})  
+    name = "Hello";
+    if request.user.is_authenticated: 
+        name =  request.user.get_full_name()
+    return render(request, 'home/index.html',  {'commentForm': CommentForm(), 'name': name})  
 
 
 def addComment(request):

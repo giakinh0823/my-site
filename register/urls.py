@@ -9,8 +9,11 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 app_name='register'
 
 urlpatterns = [
-    path('login/', views.login, name='login'),
-    path('signup/', views.signup, name='signup')
+    path('login/', views.loginuser, name='login'),
+    path('logout/', views.logoutuser, name='logout'),
+    path('signup/', views.signup, name='signup'),
+    path('editname/', views.editname, name='editname'),
+
 ]
 
 urlpatterns += staticfiles_urlpatterns()
