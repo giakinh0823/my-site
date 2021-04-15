@@ -36,13 +36,13 @@ urlpatterns = [
     # register
     path('', include('register.urls')),
     
-    #change password
+    # change password
     path('change-password/',auth_views.PasswordChangeView.as_view(template_name='register/change-password.html',
             success_url = '/'
         ),
         name='change_password'
     ),
-    #forget Password
+    # forget Password
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
             template_name='register/password-reset/password_reset.html',
