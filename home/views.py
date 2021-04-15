@@ -1,9 +1,9 @@
+from django.core.mail import send_mail, BadHeaderError
+from django.http import HttpResponse
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseRedirect
+
 from comment import forms
 from comment.forms import CommentForm
-from django.contrib.auth.models import User
-from django.core.mail import send_mail, BadHeaderError
 
 
 # Create your views here.
